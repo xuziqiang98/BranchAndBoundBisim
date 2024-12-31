@@ -1,0 +1,558 @@
+
+          =============================================================
+          Num trainable parameters
+          536577
+          ==============================================================
+
+starting launch round 0
+[36m(PoolActor pid=40845)[0m /Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/jit/annotations.py:389: UserWarning: TorchScript will treat type annotations of Tensor dtype-specific subtypes as if they are normal Tensors. dtype constraints are not enforced in compilation either.
+[36m(PoolActor pid=40845)[0m   warnings.warn(
+[36m(PoolActor pid=40842)[0m original problem has 6560 variables (6480 bin, 80 int, 0 impl, 0 cont) and 6562 constraints
+[36m(PoolActor pid=40845)[0m OMP: Info #276: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+[36m(PoolActor pid=40848)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40840)[0m original problem has 5775 variables (5700 bin, 75 int, 0 impl, 0 cont) and 5777 constraints[32m [repeated 7x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:01:41 333
+[36m(PoolActor pid=40842)[0m            Baseline               NN
+[36m(PoolActor pid=40842)[0m     GAP   0.633673307255506    0.4792971948161018
+[36m(PoolActor pid=40842)[0m     Nodes -1    258
+[36m(PoolActor pid=40842)[0m     ================================================
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40842)[0m done converting, starting to send to main process
+updated 71 from value 0.7848088378538748 to value 0.4640212066550067
+updated 16 from value 0.5862920247696776 to value 0.4533826490042991
+updated 35 from value 0.7567916849362326 to value 0.48805629478647017
+updated 142 from value 0.854844974880172 to value 0.6038486782084039
+updated 129 from value 0.633673307255506 to value 0.4792971948161018
+0 rewards: [0.40874621272087097, -0.09896492213010788, 0.22669485211372375, -0.08028783649206161, 0.35509824752807617, 0.2936161756515503, 0.24362099170684814, -0.5268041491508484]
+getting old model base
+fitting....
+loss -0.020484937354922295: 100%|████████████████████████████| 16/16 [01:55<00:00,  7.25s/it]
+old_vs tensor(0.2149) vs tensor(0.2149, grad_fn=<MeanBackward0>) logratio tensor(1., grad_fn=<MeanBackward0>) ± tensor(0., grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2003) vs tensor(0.1574, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0006, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2015) vs tensor(0.1117, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0006, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2071) vs tensor(0.0814, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0011, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.1888) vs tensor(0.0315, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0007, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.1981) vs tensor(0.0012, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0010, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2168) vs tensor(-0.0240, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0010, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.1976) vs tensor(-0.0671, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0011, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2172) vs tensor(-0.0774, grad_fn=<MeanBackward0>) logratio tensor(1.0002, grad_fn=<MeanBackward0>) ± tensor(0.0014, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2161) vs tensor(-0.1061, grad_fn=<MeanBackward0>) logratio tensor(1.0002, grad_fn=<MeanBackward0>) ± tensor(0.0019, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2054) vs tensor(-0.1066, grad_fn=<MeanBackward0>) logratio tensor(1.0003, grad_fn=<MeanBackward0>) ± tensor(0.0018, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2057) vs tensor(-0.1459, grad_fn=<MeanBackward0>) logratio tensor(0.9998, grad_fn=<MeanBackward0>) ± tensor(0.0015, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.1933) vs tensor(-0.1639, grad_fn=<MeanBackward0>) logratio tensor(0.9997, grad_fn=<MeanBackward0>) ± tensor(0.0016, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2064) vs tensor(-0.1737, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0017, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.2063) vs tensor(-0.1687, grad_fn=<MeanBackward0>) logratio tensor(1.0002, grad_fn=<MeanBackward0>) ± tensor(0.0019, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(0.1984) vs tensor(-0.1948, grad_fn=<MeanBackward0>) logratio tensor(0.9998, grad_fn=<MeanBackward0>) ± tensor(0.0019, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+RUNNING 0
+RUNNING 1
+RUNNING 2
+RUNNING 3
+RUNNING 4
+RUNNING 5
+RUNNING 6
+RUNNING 7
+[36m(PoolActor pid=40842)[0m original problem has 6240 variables (6162 bin, 78 int, 0 impl, 0 cont) and 6242 constraints
+[36m(PoolActor pid=40840)[0m     ================================================[32m [repeated 14x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:01:41 498[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m            Baseline               NN[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     GAP   0.7197466924775873    0.7909763799493552[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Nodes -1    275[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m original problem has 6083 variables (6006 bin, 77 int, 0 impl, 0 cont) and 6085 constraints
+[36m(PoolActor pid=40841)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40840)[0m original problem has 6399 variables (6320 bin, 79 int, 0 impl, 0 cont) and 6401 constraints[32m [repeated 6x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m     ================================================
+[36m(PoolActor pid=40844)[0m     Problemname: TSP 15:04:32 645
+[36m(PoolActor pid=40844)[0m            Baseline               NN
+[36m(PoolActor pid=40844)[0m     GAP   0.7085834591764827    0.5626357111683429
+[36m(PoolActor pid=40844)[0m     Nodes -1    289
+[36m(PoolActor pid=40844)[0m     ================================================
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40845)[0m done converting, starting to send to main process
+RUNNING 8
+RUNNING 9
+RUNNING 10
+RUNNING 11
+RUNNING 12
+RUNNING 13
+RUNNING 14
+RUNNING 15
+[36m(PoolActor pid=40842)[0m original problem has 6083 variables (6006 bin, 77 int, 0 impl, 0 cont) and 6085 constraints
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:05:19 408[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     GAP   0.5959201247760764    0.5371972937073499[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Nodes -1    265[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 6240 variables (6162 bin, 78 int, 0 impl, 0 cont) and 6242 constraints[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+RUNNING 16
+RUNNING 17
+RUNNING 18
+RUNNING 19
+RUNNING 20
+RUNNING 21
+RUNNING 22
+RUNNING 23
+[36m(PoolActor pid=40841)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40844)[0m     ================================================[32m [repeated 14x across cluster][0m
+[36m(PoolActor pid=40844)[0m     Problemname: TSP 15:05:19 355[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m            Baseline               NN[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m     GAP   0.7513265707305613    0.48923016721012447[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m     Nodes -1    260[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 6888 variables (6806 bin, 82 int, 0 impl, 0 cont) and 6890 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 24
+RUNNING 25
+RUNNING 26
+RUNNING 27
+RUNNING 28
+RUNNING 29
+RUNNING 30
+RUNNING 31
+[36m(PoolActor pid=40840)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:06:06 380[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     GAP   0.5841429258963365    0.42715596015817264[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Nodes -1    263[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m original problem has 5928 variables (5852 bin, 76 int, 0 impl, 0 cont) and 5930 constraints
+[36m(PoolActor pid=40844)[0m original problem has 5775 variables (5700 bin, 75 int, 0 impl, 0 cont) and 5777 constraints
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 2x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:06:54 451
+[36m(PoolActor pid=40842)[0m            Baseline               NN
+[36m(PoolActor pid=40842)[0m     GAP   0.5071171665216369    0.3010964031330173
+[36m(PoolActor pid=40842)[0m     Nodes -1    270
+[36m(PoolActor pid=40840)[0m original problem has 6399 variables (6320 bin, 79 int, 0 impl, 0 cont) and 6401 constraints[32m [repeated 6x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m     Problemname: TSP 15:06:54 472
+[36m(PoolActor pid=40844)[0m            Baseline               NN
+[36m(PoolActor pid=40844)[0m     GAP   0.4910850480883587    0.532945530195337
+[36m(PoolActor pid=40844)[0m     Nodes -1    272
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40842)[0m done converting, starting to send to main process
+RUNNING 32
+RUNNING 33
+RUNNING 34
+RUNNING 35
+RUNNING 36
+RUNNING 37
+RUNNING 38
+RUNNING 39
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 5928 variables (5852 bin, 76 int, 0 impl, 0 cont) and 5930 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40844)[0m     Problemname: TSP 15:07:41 404[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m            Baseline               NN[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m     GAP   0.4607868546233812    0.37300722127333746[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m     Nodes -1    265[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+RUNNING 40
+RUNNING 41
+RUNNING 42
+RUNNING 43
+RUNNING 44
+RUNNING 45
+RUNNING 46
+RUNNING 47
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 5775 variables (5700 bin, 75 int, 0 impl, 0 cont) and 5777 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:08:28 473[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     GAP   0.4318554042305868    0.35201818321553857[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Nodes -1    272[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 48
+RUNNING 49
+RUNNING 50
+RUNNING 51
+RUNNING 52
+RUNNING 53
+RUNNING 54
+RUNNING 55
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 5775 variables (5700 bin, 75 int, 0 impl, 0 cont) and 5777 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:09:16 417[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     GAP   0.4270518116825407    0.3853227448837176[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Nodes -1    266[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 56
+RUNNING 57
+RUNNING 58
+RUNNING 59
+RUNNING 60
+RUNNING 61
+RUNNING 62
+RUNNING 63
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 7224 variables (7140 bin, 84 int, 0 impl, 0 cont) and 7226 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:10:03 476[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     GAP   0.3800233283954342    0.35786902227463285[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Nodes -1    272[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 64
+RUNNING 65
+RUNNING 66
+RUNNING 67
+RUNNING 68
+RUNNING 69
+RUNNING 70
+RUNNING 71
+[36m(PoolActor pid=40840)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40840)[0m     ================================================[32m [repeated 14x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 5624 variables (5550 bin, 74 int, 0 impl, 0 cont) and 5626 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:10:03 288[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m            Baseline               NN[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     GAP   0.8147021460408199    2.1804517658151497[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Nodes -1    253[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40846)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 72
+RUNNING 73
+RUNNING 74
+RUNNING 75
+RUNNING 76
+RUNNING 77
+RUNNING 78
+RUNNING 79
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 18x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 6083 variables (6006 bin, 77 int, 0 impl, 0 cont) and 6085 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:11:38 415[32m [repeated 9x across cluster][0m
+[36m(PoolActor pid=40842)[0m            Baseline               NN[32m [repeated 9x across cluster][0m
+[36m(PoolActor pid=40842)[0m     GAP   0.3500392510193313    0.5039210551838494[32m [repeated 9x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Nodes -1    266[32m [repeated 9x across cluster][0m
+[36m(PoolActor pid=40846)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 80
+RUNNING 81
+RUNNING 82
+RUNNING 83
+RUNNING 84
+RUNNING 85
+RUNNING 86
+RUNNING 87
+[36m(PoolActor pid=40846)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40840)[0m     ================================================[32m [repeated 14x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 6083 variables (6006 bin, 77 int, 0 impl, 0 cont) and 6085 constraints[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:11:38 389[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m            Baseline               NN[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     GAP   0.7246903235974506    0.5136356620511647[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Nodes -1    264[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40846)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+RUNNING 88
+RUNNING 89
+[36m(PoolActor pid=40847)[0m changing prio to disable fancy nodeselection
+[36m(PoolActor pid=40840)[0m     ================================================[32m [repeated 16x across cluster][0m
+[36m(PoolActor pid=40840)[0m original problem has 6240 variables (6162 bin, 78 int, 0 impl, 0 cont) and 6242 constraints[32m [repeated 2x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:12:25 540[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m            Baseline               NN[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     GAP   0.6689040884866656    0.3242276913612563[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m     Nodes -1    279[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process[32m [repeated 8x across cluster][0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m     ================================================[32m [repeated 2x across cluster][0m
+[36m(PoolActor pid=40847)[0m     Problemname: TSP 15:13:12 1353
+[36m(PoolActor pid=40847)[0m            Baseline               NN
+[36m(PoolActor pid=40847)[0m     GAP   0.5880366518981245    0.08588809569444882
+[36m(PoolActor pid=40847)[0m     Nodes -1    299
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m     Problemname: TSP 15:13:12 512
+[36m(PoolActor pid=40840)[0m            Baseline               NN
+[36m(PoolActor pid=40840)[0m     GAP   0.680837917049564    0.39070106521832115
+[36m(PoolActor pid=40840)[0m     Nodes -1    276
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40847)[0m done converting, starting to send to main process
+starting launch round 1
+[36m(PoolActor pid=40842)[0m original problem has 6399 variables (6320 bin, 79 int, 0 impl, 0 cont) and 6401 constraints
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m
+[36m(PoolActor pid=40842)[0m     ================================================[32m [repeated 4x across cluster][0m
+[36m(PoolActor pid=40842)[0m     Problemname: TSP 15:13:58 373
+[36m(PoolActor pid=40842)[0m            Baseline               NN
+[36m(PoolActor pid=40842)[0m     GAP   0.5904402211587396    0.3601991035055572
+[36m(PoolActor pid=40842)[0m     Nodes -1    262
+[36m(PoolActor pid=40840)[0m done converting, starting to send to main process
+[36m(PoolActor pid=40840)[0m original problem has 6723 variables (6642 bin, 81 int, 0 impl, 0 cont) and 6725 constraints[32m [repeated 7x across cluster][0m
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40844)[0m     Problemname: TSP 15:13:58 472
+[36m(PoolActor pid=40844)[0m            Baseline               NN
+[36m(PoolActor pid=40844)[0m     GAP   0.7142219276584432    0.698458250649389
+[36m(PoolActor pid=40844)[0m     Nodes -1    272
+[36m(PoolActor pid=40844)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40848)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40845)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40847)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40841)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40846)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40840)[0m
+[36m(PoolActor pid=40844)[0m done converting, starting to send to main process
+updated 63 from value 0.8229660486981885 to value 0.479319305948433
+updated 102 from value 0.855969809615799 to value 0.36544303237260145
+updated 84 from value 0.7142219276584432 to value 0.698458250649389
+updated 1 from value 0.6599810985941985 to value 0.4426386681409755
+updated 124 from value 0.5904402211587396 to value 0.3601991035055572
+updated 148 from value 0.3557031115429366 to value 0.26618045750450103
+1 rewards: [0.41757097840309143, 0.5730655193328857, 0.02207113243639469, 0.3293161392211914, -0.7107386589050293, -1.0, 0.3899482488632202, 0.2516780495643616]
+getting old model base
+fitting....
+loss -0.02454512193799019:   6%|█▉                            | 1/16 [00:12<03:00, 12.07s/it]
+old_vs tensor(-0.1606) vs tensor(-0.1606, grad_fn=<MeanBackward0>) logratio tensor(1., grad_fn=<MeanBackward0>) ± tensor(0., grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.1615) vs tensor(-0.1726, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0002, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+Traceback (most recent call last):
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 239, in <module>
+    main()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 236, in main
+    train(cfg,NN, optim)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 208, in train
+    fit(cfg, NN, optim, open_nodes, returns, nodes, rewards, selecteds, mask)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 178, in fit
+    loss, kldiv = train_ppo(NN,optim,batch,data,o_logp,o_vs,cfg.training_scheme, mb_advantages=ad_o)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/PPO.py", line 137, in train_ppo
+    loss.backward()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 239, in <module>
+    main()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 236, in main
+    train(cfg,NN, optim)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 208, in train
+    fit(cfg, NN, optim, open_nodes, returns, nodes, rewards, selecteds, mask)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py", line 178, in fit
+    loss, kldiv = train_ppo(NN,optim,batch,data,o_logp,o_vs,cfg.training_scheme, mb_advantages=ad_o)
+  File "/Users/xuziqiang/Workspace/BranchAndBoundBisim/PPO.py", line 137, in train_ppo
+    loss.backward()
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/Users/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

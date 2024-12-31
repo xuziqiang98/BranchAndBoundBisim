@@ -1,0 +1,61 @@
+
+          =============================================================
+          Num trainable parameters
+          536577
+          ==============================================================
+
+starting launch round 0
+[2m[36m(PoolActor pid=14151)[0m /home/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/jit/annotations.py:310: UserWarning: TorchScript will treat type annotations of Tensor dtype-specific subtypes as if they are normal Tensors. dtype constraints are not enforced in compilation either.
+[2m[36m(PoolActor pid=14151)[0m   warnings.warn("TorchScript will treat type annotations of Tensor "
+[2m[36m(PoolActor pid=14147)[0m original problem has 6723 variables (6642 bin, 81 int, 0 impl, 0 cont) and 6725 constraints
+[2m[36m(PoolActor pid=14147)[0m
+[2m[36m(PoolActor pid=14147)[0m     ================================================
+[2m[36m(PoolActor pid=14147)[0m     Problemname: TSP 13:41:15 177
+[2m[36m(PoolActor pid=14147)[0m            Baseline               NN
+[2m[36m(PoolActor pid=14147)[0m     GAP   0.4884207147855358    0.52685729947391
+[2m[36m(PoolActor pid=14147)[0m     Nodes -1    178
+[2m[36m(PoolActor pid=14147)[0m     ================================================
+[2m[36m(PoolActor pid=14147)[0m
+[2m[36m(PoolActor pid=14153)[0m original problem has 5624 variables (5550 bin, 74 int, 0 impl, 0 cont) and 5626 constraints[32m [repeated 7x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/ray-logging.html#log-deduplication for more options.)[0m
+[2m[36m(PoolActor pid=14149)[0m done converting, starting to send to main process
+updated 31 from value 0.7677748414950107 to value 0.4410928457915126
+updated 21 from value 0.8051756467319862 to value 0.5357779683545443
+updated 44 from value 0.8194833778698999 to value 0.5736174947478309
+updated 45 from value 0.829784907554254 to value 0.5972838281853392
+updated 22 from value 0.7896703657518718 to value 0.6002656408841367
+updated 73 from value 0.9033133133116475 to value 0.6205356554181252
+0 rewards: [0.42549192905426025, -0.0786956250667572, 0.33458250761032104, 0.30002546310424805, 0.28019440174102783, 0.2398529052734375, -0.3261222541332245, 0.313044935464859]
+getting old model base
+fitting....
+loss -0.02212374657392502: 100%|██████████████████████████████████████████| 16/16 [00:56<00:00,  3.51s/it]
+old_vs tensor(-0.2628) vs tensor(-0.2628, grad_fn=<MeanBackward0>) logratio tensor(1., grad_fn=<MeanBackward0>) ± tensor(0., grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2605) vs tensor(-0.2113, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0009, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2478) vs tensor(-0.1558, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0015, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2682) vs tensor(-0.1315, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0025, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2579) vs tensor(-0.0919, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0021, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2654) vs tensor(-0.0639, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0023, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2772) vs tensor(-0.0546, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0017, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2567) vs tensor(-0.0067, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0014, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2532) vs tensor(0.0291, grad_fn=<MeanBackward0>) logratio tensor(0.9998, grad_fn=<MeanBackward0>) ± tensor(0.0009, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2657) vs tensor(0.0407, grad_fn=<MeanBackward0>) logratio tensor(0.9999, grad_fn=<MeanBackward0>) ± tensor(0.0006, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2501) vs tensor(0.0839, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0007, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2553) vs tensor(0.0931, grad_fn=<MeanBackward0>) logratio tensor(1.0000, grad_fn=<MeanBackward0>) ± tensor(0.0011, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2650) vs tensor(0.1027, grad_fn=<MeanBackward0>) logratio tensor(0.9997, grad_fn=<MeanBackward0>) ± tensor(0.0014, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2717) vs tensor(0.1131, grad_fn=<MeanBackward0>) logratio tensor(1.0002, grad_fn=<MeanBackward0>) ± tensor(0.0018, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2619) vs tensor(0.1324, grad_fn=<MeanBackward0>) logratio tensor(1.0002, grad_fn=<MeanBackward0>) ± tensor(0.0023, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+old_vs tensor(-0.2647) vs tensor(0.1319, grad_fn=<MeanBackward0>) logratio tensor(1.0001, grad_fn=<MeanBackward0>) ± tensor(0.0024, grad_fn=<StdBackward0>) torch.Size([128]) torch.Size([128])
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/home/xuziqiang/BranchAndBoundBisim-object-free-model/main.py", line 233, in main
+    train(cfg,NN, optim)
+  File "/home/xuziqiang/BranchAndBoundBisim-object-free-model/main.py", line 208, in train
+    torch.save({"weights": NN.state_dict(), "config": cfg}, f"models/model-{wandb.run.id}.pt")
+  File "/home/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/serialization.py", line 440, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/serialization.py", line 315, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/home/xuziqiang/miniconda3/envs/BnBbisim/lib/python3.10/site-packages/torch/serialization.py", line 288, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: Parent directory models does not exist.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

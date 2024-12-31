@@ -1,0 +1,42 @@
+{
+  "os": "macOS-15.2-arm64-arm-64bit",
+  "python": "CPython 3.10.13",
+  "startedAt": "2024-12-31T07:00:30.339916Z",
+  "program": "/Users/xuziqiang/Workspace/BranchAndBoundBisim/main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "https://github.com/xuziqiang98/BranchAndBoundBisim.git"
+  },
+  "root": "/Users/xuziqiang/Workspace/BranchAndBoundBisim",
+  "host": "xuziqiangdeMacBook-Pro.local",
+  "executable": "/Users/xuziqiang/miniconda3/envs/BnBbisim/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 14,
+  "cpu_count_logical": 14,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "455220822016"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "455220822016"
+    }
+  },
+  "memory": {
+    "total": "51539607552"
+  },
+  "cpu": {
+    "count": 14,
+    "countLogical": 14
+  },
+  "apple": {
+    "name": "Apple M4 Pro",
+    "ecpuCores": 4,
+    "pcpuCores": 10,
+    "gpuCores": 20,
+    "memoryGb": 48,
+    "swapTotalBytes": "1073741824",
+    "ramTotalBytes": "51539607552"
+  }
+}
