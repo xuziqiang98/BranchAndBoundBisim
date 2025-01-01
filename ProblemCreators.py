@@ -291,4 +291,41 @@ def _make_dummy_model(seed=None):
     # model.disablePropagation()
     return model
 
-
+def make_dsp(seed=None):
+    # Create a SCIP model
+    model = Model("DSP")
+    
+    n = np.random.randint(5000, 8000)
+    get_w = lambda: np.random.choice([0, 1])
+    density = np.random.uniform()
+    matrix = np.zeros((n, n))
+    
+    # Generate the graph
+    for i in range(n):
+        for j in range(i):
+            if np.random.uniform() < density:
+                w = get_w()
+                matrix[i, j] = w
+                matrix[j, i] = w
+    
+    # Define variables
+    x = {}
+    for i in range(n):
+        x[i] = model.addVar(vtype="B", name=f"x_{i}")
+    
+    # Define constraints
+    for v in range(n):
+        if np.sum(matrix[v]) == 0:  # Check for isolated nodes
+            model.addCons(x[v] == 1, f"isolated_{v}")
+        else:
+            neighbors = [u for u in range(n) if matrix[v][u] == 1]
+            model.addCons(x[v] + scip.quicksum(x[u] for u in neighbors) >= 1, f"dominate_{v}")
+    
+    # Define objective
+    model.setObjective(scip.quicksum(x[v] for v in range(n)), sense="minimize")
+    
+    # If a seed is provided, write the problem to a file
+    if seed is not None:
+        model.writeProblem(f"model-{seed}.cip")
+    
+    return model
