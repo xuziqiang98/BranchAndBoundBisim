@@ -1,0 +1,28 @@
+# IDE configurations
+/.vscode/
+/.idea/
+
+# cache
+__pycache__/
+
+# virtual environment
+/venv/
+
+# space-intensive data
+checkpoints/
+training_data/
+eval_data/
+wandb/
+tsplib/
+outputs/
+build/
+models/
+
+# cython files
+feature_extractor.c
+feature_extractor.cpython-310-x86_64-linux-gnu.so
+feature_extractor.html
+
+# other files
+.DS_Store
+
