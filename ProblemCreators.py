@@ -291,10 +291,26 @@ def _make_dummy_model(seed=None):
     # model.disablePropagation()
     return model
 
+# def graph2dsp():
+#     n = np.random.randint(5000, 8000)
+#     get_w = lambda: np.random.choice([0, 1])
+#     density = np.random.uniform()
+#     matrix = np.zeros((n, n))
+    
+#     # Generate the graph
+#     for i in range(n):
+#         for j in range(i):
+#             if np.random.uniform() < density:
+#                 w = get_w()
+#                 matrix[i, j] = w
+#                 matrix[j, i] = w
+    
+#     return matrix, make_dsp(matrix)
+
 def make_dsp(seed=None):
     # Create a SCIP model
     model = Model("DSP")
-    
+
     n = np.random.randint(5000, 8000)
     get_w = lambda: np.random.choice([0, 1])
     density = np.random.uniform()
@@ -307,7 +323,7 @@ def make_dsp(seed=None):
                 w = get_w()
                 matrix[i, j] = w
                 matrix[j, i] = w
-    
+        
     # Define variables
     x = {}
     for i in range(n):
@@ -328,4 +344,4 @@ def make_dsp(seed=None):
     if seed is not None:
         model.writeProblem(f"model-{seed}.cip")
     
-    return model
+    return matrix, model
