@@ -19,9 +19,9 @@ build/
 models/
 
 # cython files
-feature_extractor.c
-feature_extractor.cpython-310-x86_64-linux-gnu.so
-feature_extractor.html
+*.c
+*.so
+*.html
 
 # other files
 .DS_Store
