@@ -311,7 +311,7 @@ def make_dsp(seed=None):
     # Create a SCIP model
     model = Model("DSP")
 
-    n = np.random.randint(5000, 8000)
+    n = np.random.randint(800, 1000)
     get_w = lambda: np.random.choice([0, 1])
     density = np.random.uniform()
     matrix = np.zeros((n, n))
