@@ -7,6 +7,7 @@ from scipy.spatial.distance import cdist
 from utils import powernorm
 from tsp_mutator import do_mutation
 import tsplib95 as tsplib
+from scipy.io import mmread
 
 def generate_test_data(seed):
     g_cpu = torch.Generator()
@@ -46,9 +47,9 @@ class Wrapper:
         return (self.tspobj.dimension, self.tspobj.dimension)
 
 
-# def make_tsplib(location:str):
-def make_tsplib():
-    location = "tsplib/"
+def make_tsplib(location:str):
+# def make_tsplib():
+    # location = "tsplib/"
     problem = tsplib.load(location)
     size = problem.dimension
     ds= Wrapper(problem)#np.array([problem.get_weight(*i) for i in problem.get_edges()]).reshape(size,size)
@@ -291,39 +292,57 @@ def _make_dummy_model(seed=None):
     # model.disablePropagation()
     return model
 
-# def graph2dsp():
-#     n = np.random.randint(5000, 8000)
-#     get_w = lambda: np.random.choice([0, 1])
-#     density = np.random.uniform()
-#     matrix = np.zeros((n, n))
+def make_mtx(location:str):
+    # with open(location, 'r') as f:
+    #     lines = f.readlines()
+    #     # 跳过第一行（以%%开头的那行）
+    #     data_lines = lines[1:]
+    #     # 从第二行获取矩阵的行数和列数（假设格式相对简单，第二行是类似'3 3'表示3行3列这样的格式）
+    #     n_rows, n_cols, _ = map(int, data_lines[0].split())
+    #     matrix = np.zeros((n_rows, n_cols), dtype=int)
+    #     for line in data_lines[1:]:
+    #         parts = line.split()
+    #         if len(parts) >= 2:
+    #             u, v = map(int, parts[:2])
+    #             # 添加索引范围验证，避免越界
+    #             if 1 <= u <= n_rows and 1 <= v <= n_cols:
+    #                 matrix[u - 1][v - 1] = 1
+    #                 if n_rows == n_cols:  # 处理无向图情况，保证对称
+    #                     matrix[v - 1][u - 1] = 1
+    # 读取 .mtx 文件为稀疏矩阵
+    sparse_matrix = mmread(location)
     
-#     # Generate the graph
-#     for i in range(n):
-#         for j in range(i):
-#             if np.random.uniform() < density:
-#                 w = get_w()
-#                 matrix[i, j] = w
-#                 matrix[j, i] = w
+    # 确保是无向图（矩阵对称）
+    adjacency_matrix = sparse_matrix + sparse_matrix.T
     
-#     return matrix, make_dsp(matrix)
+    # 转换为 NumPy 的邻接矩阵格式
+    adjacency_matrix = adjacency_matrix.toarray()
+    
+    # 将非零元素设置为 1（表示无权图）
+    adjacency_matrix[adjacency_matrix != 0] = 1.
 
-def make_dsp(seed=None):
+    return make_dsp(matrix=adjacency_matrix)
+
+def make_dsp(seed=None, matrix=None):
     # Create a SCIP model
     model = Model("DSP")
 
-    n = np.random.randint(800, 1000)
-    get_w = lambda: np.random.choice([0, 1])
-    density = np.random.uniform()
-    matrix = np.zeros((n, n))
-    
-    # Generate the graph
-    for i in range(n):
-        for j in range(i):
-            if np.random.uniform() < density:
-                w = get_w()
-                matrix[i, j] = w
-                matrix[j, i] = w
+    if matrix is None:
+        n = np.random.randint(800, 1000)
+        get_w = lambda: np.random.choice([0, 1])
+        density = np.random.uniform()
+        matrix = np.zeros((n, n))
         
+        # Generate the graph
+        for i in range(n):
+            for j in range(i):
+                if np.random.uniform() < density:
+                    w = get_w()
+                    matrix[i, j] = w
+                    matrix[j, i] = w
+    else:
+        n = matrix.shape[0]
+    
     # Define variables
     x = {}
     for i in range(n):
@@ -344,4 +363,4 @@ def make_dsp(seed=None):
     if seed is not None:
         model.writeProblem(f"model-{seed}.cip")
     
-    return matrix, model
+    return model

@@ -18,6 +18,11 @@ outputs/
 build/
 models/
 
+# datasets
+DIMACS/
+BHOSLIB/
+RANDOM/
+
 # cython files
 *.c
 *.so

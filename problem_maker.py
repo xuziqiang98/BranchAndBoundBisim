@@ -23,19 +23,20 @@ def make_dataset(functions, number_of_instances, folder_name):
         os.mkdir(folder_name)
         os.mkdir(f"{folder_name}/data")
         os.mkdir(f"{folder_name}/tmp")
-        os.mkdir(f"{folder_name}/graph")
+        # os.mkdir(f"{folder_name}/graph")
     for f in functions:
         buffer = []
         gap = []
         refs = []
         node_count = []
         for i in range(256):
-            if f.__name__ == "make_dsp":
-                graph, model = f()
-            else:
-                model = f()
+            # if f.__name__ == "make_dsp":
+            #     graph, model = f()
+            # else:
+            #     model = f()
+            model = f()
             # 将graph写入csv文件
-            np.savetxt(f"{folder_name}/graph/graph-{f.__name__}-{i}.csv", graph, delimiter=',', fmt='%d')
+            # np.savetxt(f"{folder_name}/graph/graph-{f.__name__}-{i}.csv", graph, delimiter=',', fmt='%d')
             model.writeProblem(f"{folder_name}/tmp/model-{f.__name__}-{i}.cip")
             refs.append(get_model_gap.remote(f"{folder_name}/tmp/model-{f.__name__}-{i}.cip"))
 
@@ -51,11 +52,12 @@ def make_dataset(functions, number_of_instances, folder_name):
             refs = []
             if len(gap)<25:
                 for j in range(16):
-                    if f.__name__ == "make_dsp":
-                        graph, model = f()
-                    else:
-                        model = f()
-                    np.savetxt(f"{folder_name}/graph/graph-{f.__name__}-{j}-{i+64}.csv", graph, delimiter=',', fmt='%d')
+                    # if f.__name__ == "make_dsp":
+                    #     graph, model = f()
+                    # else:
+                    #     model = f()
+                    model = f()
+                    # np.savetxt(f"{folder_name}/graph/graph-{f.__name__}-{j}-{i+64}.csv", graph, delimiter=',', fmt='%d')
                     model.writeProblem(f"{folder_name}/tmp/model-{f.__name__}-{j}-{i+64}.cip")
                     refs.append(
                         get_model_gap.remote(f"{folder_name}/tmp/model-{f.__name__}-{j}-{i+64}.cip")
@@ -115,4 +117,4 @@ if __name__ == "__main__":
     print(make_dataset(functions, args.number_of_instances, args.folder_name))
     
     # run
-    # python problem_maker.py checkpoints 200 make_dsp
+    # python problem_maker.py training_data 200 make_dsp
