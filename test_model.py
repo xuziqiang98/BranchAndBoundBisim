@@ -1,4 +1,4 @@
-from ProblemCreators import make_tsplib, read_lp
+from ProblemCreators import make_tsplib, read_lp, make_mtx
 from pathlib import Path
 import torch
 from modules import CombineEmbedder
@@ -49,7 +49,8 @@ def add_mean(df, decimals=3):
     t["Gap Ours"] = np.nan
     t["Gap Base"] = np.nan
     t["Name"] = "Mean"
-    df = df.append(t, ignore_index=True)
+    # df = df.append(t, ignore_index=True)
+    df = pd.concat([df, t], ignore_index=True)
     return df
 
 
@@ -57,7 +58,9 @@ def add_mean(df, decimals=3):
 def main(checkpoint_file: str, problem_dir: str, cont_csv: bool):
     dct = torch.load(checkpoint_file)
     cfg = dct["config"]
+    print(cfg)
     params = dct["weights"]
+    print(params.keys())
     NN = CombineEmbedder(
         cfg.model.features, cfg.model.hidden_dim, depth=cfg.model.depth, n_layers=cfg.model.n_layers
     )
@@ -79,11 +82,13 @@ def main(checkpoint_file: str, problem_dir: str, cont_csv: bool):
             print(str(item))
             continue
         if "tour" in str(item) or not (
-            str(item).endswith("tsp") or str(item).endswith("lp") or str(item).endswith("mps")
+            str(item).endswith("mtx") or str(item).endswith("tsp") or str(item).endswith("lp") or str(item).endswith("mps")
         ):
             continue
         print(f"\n\n\n\n\n\nRUNNING THE BASELINE {item}\n\n\n\n\n\n")
-        if str(item).endswith("tsp"):
+        if str(item).endswith("mtx"):
+            model = make_mtx(str(item))
+        elif str(item).endswith("tsp"):
             model = make_tsplib(str(item))
         else:
             model = read_lp(str(item))
@@ -94,22 +99,38 @@ def main(checkpoint_file: str, problem_dir: str, cont_csv: bool):
         baseline_gap = model.getGap()
         base_nodes = model.getNTotalNodes()
         if base_nodes < 5:
-            df = df.append(
-                {
-                    "Name": str(item.stem),
-                    "Reward": float("NaN"),
-                    "Gap Ours": float("NaN"),
-                    "Gap Base": float("NaN"),
-                    "Nodes Base": float("NaN"),
-                    "Nodes Ours": float("NaN"),
-                },
-                ignore_index=True,
-            )
+            # df = df.append(
+            #     {
+            #         "Name": str(item.stem),
+            #         "Reward": float("NaN"),
+            #         "Gap Ours": float("NaN"),
+            #         "Gap Base": float("NaN"),
+            #         "Nodes Base": float("NaN"),
+            #         "Nodes Ours": float("NaN"),
+            #     },
+            #     ignore_index=True,
+            # )
+            
+            # 构造一个包含新行的 DataFrame
+            new_row = pd.DataFrame({
+                "Name": [str(item.stem)],
+                "Reward": [float("NaN")],
+                "Gap Ours": [float("NaN")],
+                "Gap Base": [float("NaN")],
+                "Nodes Base": [float("NaN")],
+                "Nodes Ours": [float("NaN")],
+            })
+
+            # 使用 pd.concat 拼接
+            df = pd.concat([df, new_row], ignore_index=True)
+            
             continue
         del model
         ################################
         print(f"\n\n\n\n\n\nRUNNING THE CUSTOM {item}\n\n\n\n\n\n")
-        if str(item).endswith("tsp"):
+        if str(item).endswith("mtx"):
+            model = make_mtx(str(item))
+        elif str(item).endswith("tsp"):
             model = make_tsplib(str(item))
         else:
             model = read_lp(str(item))
@@ -129,17 +150,31 @@ def main(checkpoint_file: str, problem_dir: str, cont_csv: bool):
         op, ret, no, r, select = get_data(
             nodesel, model, baseline_gap=baseline_gap, baseline_nodes=None
         )
-        df = df.append(
-            {
-                "Name": str(item.stem),
-                "Reward": r.sum().item(),
-                "Gap Ours": model.getGap(),
-                "Gap Base": baseline_gap,
-                "Nodes Base": base_nodes,
-                "Nodes Ours": model.getNTotalNodes(),
-            },
-            ignore_index=True,
-        )
+        # df = df.append(
+        #     {
+        #         "Name": str(item.stem),
+        #         "Reward": r.sum().item(),
+        #         "Gap Ours": model.getGap(),
+        #         "Gap Base": baseline_gap,
+        #         "Nodes Base": base_nodes,
+        #         "Nodes Ours": model.getNTotalNodes(),
+        #     },
+        #     ignore_index=True,
+        # )
+        
+        # 构造一个包含新行的 DataFrame
+        new_row = pd.DataFrame({
+            "Name": [str(item.stem)],
+            "Reward": [r.sum().item()],
+            "Gap Ours": [model.getGap()],
+            "Gap Base": [baseline_gap],
+            "Nodes Base": [base_nodes],
+            "Nodes Ours": [model.getNTotalNodes()],
+        })
+
+        # 使用 pd.concat 拼接
+        df = pd.concat([df, new_row], ignore_index=True)
+        
         del model
         df.to_csv("results.csv", index=False)
 
