@@ -17,6 +17,7 @@ tsplib/
 outputs/
 build/
 models/
+tmp/
 
 # datasets
 DIMACS/
@@ -27,6 +28,7 @@ RANDOM/
 *.c
 *.so
 *.html
+*.csv
 
 # other files
 .DS_Store
