@@ -8,6 +8,8 @@ from utils import powernorm
 from tsp_mutator import do_mutation
 import tsplib95 as tsplib
 from scipy.io import mmread
+import networkx as nx
+from math import ceil
 
 def generate_test_data(seed):
     g_cpu = torch.Generator()
@@ -362,6 +364,38 @@ def make_dsp(seed=None, matrix=None):
     model.setObjective(scip.quicksum(x[v] for v in range(n)), sense="minimize")
     
     # If a seed is provided, write the problem to a file
+    if seed is not None:
+        model.writeProblem(f"model-{seed}.cip")
+    
+    return model
+
+# Max Clique
+def make_mq(seed=None, matrix = None):
+    # 创建 SCIP 模型
+    model = Model("Max Clique")
+    
+    if matrix is None:
+        n = np.random.randint(180, 200)
+        density = 0.6
+        G = nx.dense_gnm_random_graph(n, ceil(n * (n - 1) * density / 2))
+        matrix = nx.to_numpy_array(G)
+    else:
+        n = matrix.shape[0]
+        
+    # 创建决策变量 x_i（是否包含顶点 i）
+    x = {v: model.addVar(vtype="B", name=f"x_{v}") for v in range(n)}
+    
+    # 目标函数：最大化选中的顶点数（即最大团的大小）
+    model.setObjective(sum(x[v] for v in range(n)), "maximize")
+    
+    # 添加约束：对于每一对不相邻的顶点 i 和 j，不能同时选中这两个顶点
+    for i, j in nx.non_edges(G):  # 获取图中所有不相邻的顶点对
+        model.addCons(x[i] + x[j] <= 1)
+    
+    # 求解模型
+    # model.setParam("limits/time", 45)
+    # model.optimize()
+    
     if seed is not None:
         model.writeProblem(f"model-{seed}.cip")
     
