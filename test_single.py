@@ -61,6 +61,10 @@ def main(checkpoint_file: str, problem_dir: str, cont_csv: bool):
     # print(cfg)
     params = dct["weights"]
     # print(params.keys())
+    # print(params['feat_emb.embd.1.weight'])
+    # for k in params.keys():
+    #     print(params[k].shape)
+    # print(cfg.model.features)
     NN = CombineEmbedder(
         cfg.model.features, cfg.model.hidden_dim, depth=cfg.model.depth, n_layers=cfg.model.n_layers
     )
