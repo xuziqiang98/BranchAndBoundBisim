@@ -400,3 +400,54 @@ def make_mq(seed=None, matrix = None):
         model.writeProblem(f"model-{seed}.cip")
     
     return model
+
+# Minus k-dominating set
+# k=1
+def make_mkd(seed=None, matrix=None):
+    # Create a SCIP model
+    model = Model("Minus k-dominating set")
+
+    if matrix is None:
+        n = np.random.randint(180, 200)
+        get_w = lambda: np.random.choice([0, 1])
+        density = np.random.uniform()
+        matrix = np.zeros((n, n))
+        
+        # Generate the graph
+        for i in range(n):
+            for j in range(i):
+                if np.random.uniform() < density:
+                    w = get_w()
+                    matrix[i, j] = w
+                    matrix[j, i] = w
+    else:
+        n = matrix.shape[0]
+    
+    # Define variables
+    x = {}
+    y = {}
+    z = {}
+    for i in range(n):
+        x[i] = model.addVar(vtype="B", name=f"x_{i}")
+        y[i] = model.addVar(vtype="B", name=f"y_{i}")
+        z[i] = model.addVar(vtype="B", name=f"z_{i}")
+    
+    # Define constraints
+    for v in range(n):
+
+        model.addCons(x[v] + y[v] + z[v] == 1, f"v{v}_assigned_to_one_value")
+
+        if np.sum(matrix[v]) == 0:  # Check for isolated nodes
+            model.addCons(x[v] == 1, f"isolated_{v}")
+        else:
+            neighbors = [u for u in range(n) if matrix[v][u] == 1]
+            model.addCons(x[v] - z[v] + scip.quicksum(x[u] - z[u] for u in neighbors) >= 1, f"dominate_{v}")
+    
+    # Define objective
+    model.setObjective(scip.quicksum(x[v] - z[v] for v in range(n)), sense="minimize")
+    
+    # If a seed is provided, write the problem to a file
+    if seed is not None:
+        model.writeProblem(f"model-{seed}.cip")
+    
+    return model
